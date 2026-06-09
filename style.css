@@ -1,0 +1,159 @@
+:root {
+    --accent-color: rgb(30, 255, 128);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(9, 175, 103);
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+body.dark-mode {
+    background-color: #222;
+    color: white;
+}
+body.dark-mode #clock {
+    background-color: rgba(255,255,255,0.1);
+}
+
+body.dark-mode .profile-card {
+    background-color: #333;
+}
+
+img {
+    width: 150px;
+    border-radius: 50%;
+}
+.profile-card {
+    background: var(--accent-color);
+    padding: 20px;
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.cursor {
+    animation: blink is infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+#clock {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    color: aqua;
+}
+
+#copy-btn {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#copy-btn:hover {
+    transform: scale(1.05);
+}
+
+#fact-text {
+    min-height: 50px;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+#fact-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#weather-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#cat-random {
+    margin-top: 30px;
+}
+
+#cat-image {
+    border-radius: 15px;
+    width: 600px;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    left: 47%;
+
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: #444;
+    color: white;
+
+    overflow: hidden;
+    z-index: 1000;
+}
+
+#theme-toggle::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 0%;
+
+    background: var(--accent-color);
+
+    z-index: 0;
+
+    transition: width 0.35s ease;
+}
+
+
+#theme-toggle.animate::before {
+    width: 100%;
+}
+
+
